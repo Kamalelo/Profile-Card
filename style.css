@@ -1,0 +1,146 @@
+/*global reset*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.switch {
+  display: none;
+}
+.switchlabel {
+  position: absolute;
+
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: solid black 3px;
+  border-radius: 1.5rem;
+  transition: 0.3s;
+  padding: 0.2rem;
+  cursor: pointer;
+  justify-self: center;
+  top: 20px;
+  left: 140px;
+}
+
+.switchlabel::after {
+  content: "";
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: solid black 3px;
+  border-radius: 1.5rem;
+  transition: 0.3s;
+  padding: 0.2rem;
+  cursor: pointer;
+  background-color: red;
+}
+
+.switch:checked + .switchlabel::after {
+  background-color: green;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.5px black;
+  border-radius: 10px;
+}
+
+.topimage {
+  max-height: auto;
+  width: 300px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.profilepic {
+  border-radius: 50%;
+  margin-top: -80px;
+  width: 180px;
+  align-self: center;
+  margin-bottom: 10px;
+  border: solid 3px white;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: solid 0.5px grey;
+}
+h1 {
+  font-weight: bold;
+}
+h1,
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  text-align: center;
+  align-self: center;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.bottom {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.socialimage {
+  width: 30px;
+  transition: 0.3s;
+}
+.socialimage:hover {
+  transform: scale(1.1);
+}
+
+.sociallink {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.bottom::before {
+  content: "Socials";
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: absolute;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+.container:has(.switch:checked) .sociallink {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container:has(.switch:checked) .bottom::before {
+  display: none;
+}
