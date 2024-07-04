@@ -39,7 +39,7 @@
   cursor: pointer;
   justify-self: center;
   top: 20px;
-  left: 140px;
+  left: 215px;
 }
 
 .switchlabel::after {
@@ -60,6 +60,8 @@
 }
 
 .card {
+  width: 450px;
+  height: auto;
   position: relative;
   background-color: white;
   display: flex;
@@ -70,15 +72,15 @@
 
 .topimage {
   max-height: auto;
-  width: 300px;
+  width: 100%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
 
 .profilepic {
   border-radius: 50%;
-  margin-top: -80px;
-  width: 180px;
+  margin-top: -125px;
+  width: 250px;
   align-self: center;
   margin-bottom: 10px;
   border: solid 3px white;
